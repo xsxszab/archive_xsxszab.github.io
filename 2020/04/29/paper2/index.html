@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>(论文总结)BASNet:Boundary Aware Salient Object Detection | Personal Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="论文链接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(论文总结)BASNet:Boundary Aware Salient Object Detection">
+<meta property="og:url" content="http://xsxszab.github.io/2020/04/29/paper2/index.html">
+<meta property="og:site_name" content="Personal Blog">
+<meta property="og:description" content="论文链接">
+<meta property="og:image" content="http://xsxszab.github.io/2020/04/29/paper2/basnet.png">
+<meta property="og:image" content="http://xsxszab.github.io/2020/04/29/paper2/basloss.png">
+<meta property="article:published_time" content="2020-04-29T07:02:11.000Z">
+<meta property="article:modified_time" content="2020-04-29T07:30:43.022Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="sod">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xsxszab.github.io/2020/04/29/paper2/basnet.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Personal Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Personal Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://xsxszab.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-paper2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/29/paper2/" class="article-date">
+  <time datetime="2020-04-29T07:02:11.000Z" itemprop="datePublished">2020-04-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/">论文总结</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      (论文总结)BASNet:Boundary Aware Salient Object Detection
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Qin_BASNet_Boundary-Aware_Salient_Object_Detection_CVPR_2019_paper.pdf" target="_blank" rel="noopener">论文链接</a></p>
+<a id="more"></a>
+
+<p>本文中，作者主要试图解决两个问题：一是如何让模型同时理解高级与低级特征，二是如何提高边界分类准确率。而网络结构与这两个问题一一对应，第一部分为Predict Module采用了类似U-net的Encoder-Decoder结构，通过多层间的shortcut connection来融合不同层级的特征；第二部分为Residual Refinement Module，与以往部分迭代式模型不同，本文中残差模块只使用了一次，同样采用了Encoder-Decoder结构，不过结构上与Predict Module相比较为简单。最后，本文最大的创新点在于混合了BCE, SSIM 和 IoU三种损失函数，对像素级、patch级以及全局的预测结果均进行优化，没有显式地采用关注边界的损失函数，但也同时提高了整体和边界的分类准确率。网络结构如下图所示。</p>
+<p><img src="basnet.png" alt=""></p>
+<p>本文在网络结构上没有显著的创新点，Predict Module模块部分采用了ResNet-34的权重进行初始化，其余采用xavier初始化法。文章最大的创新点在于新的损失函数。文中选取了Predict Module的后八个特征图及Residual Refinement Module的最终输出来加权计算loss，每个loss包含三部分：1.BCEloss，该损失函数在显著性检测中广泛使用，无介绍必要；2.SSIMloss，其最早在图像质量评估中被提出，在文中被用于评估预测结果和ground truth在每个图像patch上的相似程度，从而加强模型对patch级别特征的学习能力；IoU是目标检测的常用评估手段，不过多介绍，在此被用于在全局层面提供损失函数。三种损失函数的混合使用也加强了模型的多尺度特征学习能力。为突出新的损失函数的显著性，文中也通过热力图展示了各个loss对图像不同区域的敏感程度。</p>
+<p><img src="basloss.png" alt=""></p>
+<p>模型在SOD、ECSSD、DUT-ORMON、PASCAL-S、HKU-IS及DUTS-TE上进行了测试，均有较高表现，部分超越了SOTA方法，且在1080ti上处理256*256像素输入时推断速度可达到25fps。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://xsxszab.github.io/2020/04/29/paper2/" data-id="ck9m2cgrf000il9fyd69y9v4y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sod/" rel="tag">sod</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/04/29/paper3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (论文总结)AFNet:Attentive Feedback Network for Boundary-aware Salient Object Detection
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/29/paper1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">(论文总结)Pyramid Feature Attention Network for Saliency Detection</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/">个人生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/">论文总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Warhammer-40k/" rel="tag">Warhammer_40k</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mcm-icm/" rel="tag">mcm_icm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mylife/" rel="tag">mylife</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sod/" rel="tag">sod</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Warhammer-40k/" style="font-size: 10px;">Warhammer_40k</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/mcm-icm/" style="font-size: 10px;">mcm_icm</a> <a href="/tags/mylife/" style="font-size: 10px;">mylife</a> <a href="/tags/sod/" style="font-size: 20px;">sod</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/04/29/paper6/">(论文总结)A Simple Pooling-Based Design for Real-Time Salient Object Detection</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/29/paper5/">(论文总结)An Iterative and Cooperative Top-Down and Bottom-Up Inference Network for Salient Object Detection</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/29/paper4/">(论文阅读)CPD:Cascaded Partial Decoder for Accurate and Fast Salient Object Detection</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/29/paper3/">(论文总结)AFNet:Attentive Feedback Network for Boundary-aware Salient Object Detection</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/29/paper2/">(论文总结)BASNet:Boundary Aware Salient Object Detection</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
