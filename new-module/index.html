@@ -20,14 +20,19 @@
     var CONFIG = {"hostname":"xsxszab.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Personal Blog">
-<meta property="og:url" content="http://xsxszab.github.io/tags/sod/index.html">
+  <meta name="description" content="详细的配置过程与经验记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo next 添加不蒜子访客记录及gitalk评论功能">
+<meta property="og:url" content="http://xsxszab.github.io/new-module/index.html">
 <meta property="og:site_name" content="Personal Blog">
+<meta property="og:description" content="详细的配置过程与经验记录">
+<meta property="article:published_time" content="2020-05-08T14:52:09.000Z">
+<meta property="article:modified_time" content="2020-05-08T15:32:33.424Z">
 <meta property="article:author" content="Yifei Wang">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://xsxszab.github.io/tags/sod/">
+<link rel="canonical" href="http://xsxszab.github.io/new-module/">
 
 
 <script id="page-configurations">
@@ -35,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Tag: sod | Personal Blog</title>
+  <title>hexo next 添加不蒜子访客记录及gitalk评论功能 | Personal Blog</title>
   
 
 
@@ -153,217 +158,137 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">sod
-          <small>Tag</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://xsxszab.github.io/new-module/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/doge.jpg">
+      <meta itemprop="name" content="Yifei Wang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Personal Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          hexo next 添加不蒜子访客记录及gitalk评论功能
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-08 22:52:09 / Modified: 23:32:33" itemprop="dateCreated datePublished" datetime="2020-05-08T22:52:09+08:00">2020-05-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
+        <center>详细的配置过程与经验记录</center>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<a id="more"></a>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-11T21:38:15+08:00"
-              content="2020-05-11">
-          05-11
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/paper8/" itemprop="url">
-            <span itemprop="name">(论文总结)Salient Object Detection Driven by Fixation Prediction</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-08T22:19:12+08:00"
-              content="2020-05-08">
-          05-08
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/summary/" itemprop="url">
-            <span itemprop="name">2019及2020年显著性检测论文总结</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-30T22:06:38+08:00"
-              content="2020-04-30">
-          04-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/paper7/" itemprop="url">
-            <span itemprop="name">(论文总结)EGNet:Edge Guidance Network for Salient Object Detection</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-29T15:44:37+08:00"
-              content="2020-04-29">
-          04-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/paper6/" itemprop="url">
-            <span itemprop="name">(论文总结)A Simple Pooling-Based Design for Real-Time Salient Object Detection</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-29T15:36:39+08:00"
-              content="2020-04-29">
-          04-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/paper5/" itemprop="url">
-            <span itemprop="name">(论文总结)An Iterative and Cooperative Top-Down and Bottom-Up Inference Network for Salient Object Detection</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-29T15:36:34+08:00"
-              content="2020-04-29">
-          04-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/paper4/" itemprop="url">
-            <span itemprop="name">(论文阅读)CPD:Cascaded Partial Decoder for Accurate and Fast Salient Object Detection</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-29T15:02:14+08:00"
-              content="2020-04-29">
-          04-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/paper3/" itemprop="url">
-            <span itemprop="name">(论文总结)AFNet:Attentive Feedback Network for Boundary-aware Salient Object Detection</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-29T15:02:11+08:00"
-              content="2020-04-29">
-          04-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/paper2/" itemprop="url">
-            <span itemprop="name">(论文总结)BASNet:Boundary Aware Salient Object Detection</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-29T11:52:25+08:00"
-              content="2020-04-29">
-          04-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/paper1/" itemprop="url">
-            <span itemprop="name">(论文总结)Pyramid Feature Attention Network for Saliency Detection</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+<p>首先贴一下我的hexo相关环境：</p>
+<ul>
+<li>hexo-cli: 3.1.0</li>
+<li>node: 12.5.0</li>
+<li>os: Darwin 19.3.0 darwin x64</li>
+</ul>
+<p>吐槽一句，hexo next的不同版本间差异比较明显，见过太多博客不提版本直接上教程，看完反而更迷惑。。。如果以上环境和你的差别较大，就可以考虑关掉这篇博客了，或者升级/降级至以上版本。</p>
+<p>在以上版本中，不蒜子统计和gitalk已经预先集成在了hexo next主题中，<strong>不需要自行修改或新建swig文件！</strong>在next主题的配置文件中分别搜索busuanzi 与 gitalk（注意只有一个t），然后将enable改为true即可。至此不蒜子的配置就结束了，当然如果需要定制效果就需要做其他修改，可以参考其他博客。gitalk则要稍微复杂一点，下面详细介绍。</p>
+<p>首先，gitalk与同样应用广泛的gitment一样，并不依赖于第三方平台，而是将每篇文章的评论自动转化为git仓库中的一个issue，因此相比第三方平台稳定性较高（国内的平台自身容易出问题，国外的连接麻烦）。</p>
+<p>既然是通过issue来管理评论，那评论者肯定要是合法的github账户。为实现这一目的，我们需要去github上注册一个oauth application（一个标准的授权协议）。<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">注册链接</a></p>
+<p>其中有三个必填栏目：</p>
+<ul>
+<li>Application name： 随便填，只要自己记得住；</li>
+<li>Homepage URL： 填博客页面地址，比如github pages的话就是https://<username>.github.io （https不能省略）；</li>
+<li>Authorization callback URL：同上，一样填成博客地址的就行。</li>
+</ul>
+<p>然后就可以看到Client ID和Client Secret，后面会用到。</p>
+<p>编辑next的配置文件，搜索gitalk，修改以下内容：</p>
+<ul>
+<li>githubID -&gt; 你的用户名；</li>
+<li>repo -&gt;仓库名，可以是博客仓库也可以是其他仓库，比如新建一个空仓库专门保存博客评论，注意这里填的是博客名，比如仓库为abcd.git，这里就要填abcd；</li>
+<li>ClientID -&gt; oauth 里的Client ID；</li>
+<li>ClientSecret -&gt; oauth里的Client Secret；</li>
+<li>adminUser -&gt; 填任何用户的ID都行，不过一般要有自己；</li>
+</ul>
+<p>然后保存，hexo重新生成，提交就ok了。需要注意的是，这两个功能都需要网络，所以本地hexo show看到的效果和真实的不一定一样，gitalk会无法使用，而不蒜子会显示非常大的访问量，这除了会带来短时间的喜悦与发现真相后的自闭外没有任何意义。。。所以具体效果一定要hexo deploy后再看。</p>
+<p>最后，每篇文章的gitalk评论区都需要adminUser范围内的人手动初始化，否则无法评论。这一点在文章多了之后可能会比较麻烦，记得已经有人写过自动化工具了，不过我还没试过，感兴趣的话可以自己去搜索一下试一试。</p>
+<p>其他就没啥了，本文参考内容较多，具体可行的步骤也是自己一点一点边查文档查博客边出来的，恕不能一一列举，不过gitalk配置部分主要参考了这篇文章：<a href="https://asdfv1929.github.io/2018/01/20/gitalk/" target="_blank" rel="noopener">https://asdfv1929.github.io/2018/01/20/gitalk/</a> 。</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/summary/" rel="prev" title="2019及2020年显著性检测论文总结">
+      <i class="fa fa-chevron-left"></i> 2019及2020年显著性检测论文总结
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/hexo-pdf/" rel="next" title="hexo next 添加pdf">
+      hexo next 添加pdf <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -568,6 +493,25 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'b21a249b95d486c5387f',
+      clientSecret: '9b645b99a06dbb82e8757b50a70b0740f79d58af',
+      repo        : 'issue_storage',
+      owner       : 'xsxszab',
+      admin       : ['xsxszab'],
+      id          : '65e2aa97c340d4f5a5c01fb6441e7a0a',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
