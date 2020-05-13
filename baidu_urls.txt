@@ -1,5 +1,5 @@
+http://xsxszab.github.io/dynamic-filter/
 http://xsxszab.github.io/python-model/
 http://xsxszab.github.io/start-sumary/
 http://xsxszab.github.io/paper8/
 http://xsxszab.github.io/hexo-pdf/
-http://xsxszab.github.io/new-module/
