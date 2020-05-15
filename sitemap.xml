@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xsxszab.github.io/learn-japanese/</loc>
+    
+    <lastmod>2020-05-15T07:37:19.384Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xsxszab.github.io/about/index.html</loc>
+    
+    <lastmod>2020-05-14T13:23:14.096Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xsxszab.github.io/python-model/</loc>
     
-    <lastmod>2020-05-14T13:13:30.198Z</lastmod>
+    <lastmod>2020-05-14T13:16:58.429Z</lastmod>
     
   </url>
   
@@ -145,13 +159,6 @@
     <loc>http://xsxszab.github.io/start-sumary/</loc>
     
     <lastmod>2020-05-12T14:35:04.069Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xsxszab.github.io/about/index.html</loc>
-    
-    <lastmod>2020-04-30T02:54:46.503Z</lastmod>
     
   </url>
   

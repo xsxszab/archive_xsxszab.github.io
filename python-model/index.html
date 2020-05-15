@@ -31,7 +31,7 @@
 <meta property="og:site_name" content="Personal Blog">
 <meta property="og:description" content="Python数学建模工具走心总结，目前大概5000字，半完成但也能看">
 <meta property="article:published_time" content="2020-05-12T02:42:42.000Z">
-<meta property="article:modified_time" content="2020-05-14T13:13:30.198Z">
+<meta property="article:modified_time" content="2020-05-14T13:16:58.429Z">
 <meta property="article:author" content="Yifei Wang">
 <meta property="article:tag" content="summary">
 <meta name="twitter:card" content="summary">
@@ -174,7 +174,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/doge.jpg">
       <meta itemprop="name" content="Yifei Wang">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="personal blog">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -199,7 +199,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-14 21:13:30" itemprop="dateModified" datetime="2020-05-14T21:13:30+08:00">2020-05-14</time>
+                <time title="Modified: 2020-05-14 21:16:58" itemprop="dateModified" datetime="2020-05-14T21:16:58+08:00">2020-05-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,7 +235,11 @@
 
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Python作为一门灵活性极高的动态语言，虽然在大型工程开发中使用起来坑比较多，但是作为脚本或者快速原型开发、算法实现的工具还是非常合适的。目前Python的科学计算生态已经比较完善了，虽然在仿真和特定领域工具箱等方面相比Matlab等工具仍有明显差距，但在数学建模中完全可以作为主力工具来使用。</p>
 <p>本文假定读者有基本的编程能力、高等数学知识、一定的Python编程经验与基础的英文阅读能力。本文中不会涉及详细用法，仅仅是试图根据个人经验对Python在数学建模上的应用做一个带有主观性的总结，内容比较散，因此写的可能在结构上不会那么。。。正经。</p>
-<p>注意：<strong>调包一时爽</strong>，要记得多亲自动手实现。</p>
+<p>注意：</p>
+<ul>
+<li><strong>调包一时爽</strong>，要记得多亲自动手实现；</li>
+<li>Python终究只是工具，用工具要建立在学习数学原理的基础上。</li>
+</ul>
 <h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><p>抛弃spyder吧，直接用pycharm专业版，用edu邮箱注册就可以免费使用正版，比spyder强大太多而且bug少，同时也更接近工业环境，总体而言是目前第一推荐的IDE，能明显提升效率。<br>此外，如果jupyter系列也算是IDE的话，推荐在服务器上跑jupyter lab，多开几个进程就可以多用户使用了（现在有了专门多人协作的jupyter hub，但我没用过不敢乱说），如果有必要的话再加上git，团队协作会方便一些。</p>
 <h2 id="常用库介绍"><a href="#常用库介绍" class="headerlink" title="常用库介绍"></a>常用库介绍</h2><h3 id="科学计算基础库：-Numpy"><a href="#科学计算基础库：-Numpy" class="headerlink" title="科学计算基础库： Numpy"></a>科学计算基础库： Numpy</h3><p>Numpy可以说是python科学计算生态的基础，没有Numpy的运算速度Python在科学计算上只能爪巴。虽然Numpy是一个偏底层的库，但是其提供的api使用频率仍相当高。鉴于其重要地位就多介绍一点。</p>
 <p>Numpy最核心的数据结构就是自定义的ndarray，类似Python原生的List，但功能丰富了太多。这篇文章总结了ndarray的基本用法与常用操作<br><a href="https://www.machinelearningplus.com/python/numpy-tutorial-part1-array-python-examples/" target="_blank" rel="noopener">https://www.machinelearningplus.com/python/numpy-tutorial-part1-array-python-examples/</a></p>
@@ -372,25 +376,25 @@
     <img class="site-author-image" itemprop="image" alt="Yifei Wang"
       src="/images/doge.jpg">
   <p class="site-author-name" itemprop="name">Yifei Wang</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">personal blog</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
