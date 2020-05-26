@@ -26,14 +26,14 @@
 
   <meta name="description" content="论文链接 ECCV 2018">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(论文总结)Mutual Learning to Adapt for Joint Human Parsing and Pose Estimation（太短了暂未完成）">
+<meta property="og:title" content="(论文总结)Mutual Learning to Adapt for Joint Human Parsing and Pose Estimation（暂未完成）">
 <meta property="og:url" content="http://xsxszab.github.io/mutal-pose/index.html">
 <meta property="og:site_name" content="Personal Blog">
 <meta property="og:description" content="论文链接 ECCV 2018">
 <meta property="og:image" content="http://xsxszab.github.io/mutal-pose/structure.png">
 <meta property="og:image" content="http://xsxszab.github.io/mutal-pose/detail.png">
 <meta property="article:published_time" content="2020-05-26T03:39:52.000Z">
-<meta property="article:modified_time" content="2020-05-26T04:06:37.846Z">
+<meta property="article:modified_time" content="2020-05-26T07:09:47.993Z">
 <meta property="article:author" content="Yifei Wang">
 <meta property="article:tag" content="paper">
 <meta name="twitter:card" content="summary">
@@ -52,7 +52,7 @@
   };
 </script>
 
-  <title>(论文总结)Mutual Learning to Adapt for Joint Human Parsing and Pose Estimation（太短了暂未完成） | Personal Blog</title>
+  <title>(论文总结)Mutual Learning to Adapt for Joint Human Parsing and Pose Estimation（暂未完成） | Personal Blog</title>
   
 
 
@@ -185,7 +185,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          (论文总结)Mutual Learning to Adapt for Joint Human Parsing and Pose Estimation（太短了暂未完成）
+          (论文总结)Mutual Learning to Adapt for Joint Human Parsing and Pose Estimation（暂未完成）
         </h1>
 
         <div class="post-meta">
@@ -196,7 +196,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-05-26 11:39:52 / Modified: 12:06:37" itemprop="dateCreated datePublished" datetime="2020-05-26T11:39:52+08:00">2020-05-26</time>
+              <time title="Created: 2020-05-26 11:39:52 / Modified: 15:09:47" itemprop="dateCreated datePublished" datetime="2020-05-26T11:39:52+08:00">2020-05-26</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,9 +231,9 @@
 
 <p>这篇文章直接提到了姿态估计和人体解析两个我不熟悉的领域。。。领域相关的内容就不细谈了，不敢瞎扯，只总结一下本文最核心的mutal learning方式，因此篇幅估计会很短。</p>
 <p>整体结构：<br><img src="structure.png" alt=""></p>
-<p>这个图很粗糙，但是最明显的特点是，本文中的模型可以通过迭代的方式对输出不断进行优化。</p>
+<p>这个图很粗糙，但是最明显的特点是，本文中的模型可以通过迭代的方式对输出不断进行优化，而且在每个iteration结束后均对两个任务添加了相应的loss。</p>
 <p>下面是具体结构：<br><img src="detail.png" alt=""></p>
-<p>这篇文章在mutal learning上采用了动态卷积的方式，对于单个任务，首先利用另一个任务分支的特征通过filter generating network生成filter，随后，与本分支进行卷积，再通过残差连接的方式将卷积后的特征合并回本分支。</p>
+<p>这篇文章在mutal learning上采用了动态卷积的方式，对于单个任务，首先利用另一个任务分支的特征通过filter generating network生成filter，随后，与本分支进行卷积，再通过残差连接的方式将卷积后的特征合并回本分支。文中明确的指出了这种方法最显著的特点：与以往大多基于手工特征的mutual learning方式不同，本文显式地将一个任务的参数通过adapting function（其实就是）转移到了另一个任务中从而实现mutual learning。</p>
 
     </div>
 
@@ -249,7 +249,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="http://xsxszab.github.io/mutal-pose/" title="(论文总结)Mutual Learning to Adapt for Joint Human Parsing and Pose Estimation（太短了暂未完成）">http://xsxszab.github.io/mutal-pose/</a>
+    <a href="http://xsxszab.github.io/mutal-pose/" title="(论文总结)Mutual Learning to Adapt for Joint Human Parsing and Pose Estimation（暂未完成）">http://xsxszab.github.io/mutal-pose/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
